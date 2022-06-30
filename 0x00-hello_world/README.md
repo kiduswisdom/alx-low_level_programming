@@ -1,1 +1,1 @@
-This is alx-low_level_programming assignments readme file
+This is a C hello world readme
