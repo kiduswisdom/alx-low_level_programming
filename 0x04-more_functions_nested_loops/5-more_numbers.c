@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * more_numbers -> this prints most numbers
- *
- */
+* more_numbers -> this prints most numbers
+*
+*/
 void more_numbers(void)
 {
 int x, y;
