@@ -2,7 +2,7 @@
 
 /**
 * mul -> multiplying 2 numbers
-* @a: ingeter param1 
+* @a: ingeter param1
 * @b: integere param 2
 * Return: success and intiger
 */
