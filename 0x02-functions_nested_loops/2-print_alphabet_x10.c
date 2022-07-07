@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
 * print_alphabet_x10 - Check holberton
@@ -9,13 +9,15 @@
 
 void print_alphabet_x10(void)
 {
-char i;
 int j;
+int x;
 
-for (j = 0; j < 10; j++)
+for (x = 0; x < 10; x++)
 {
-for (i = 'a'; i <= 'z'; i++)
+for (j = 'a'; j <= 'z'; j++)
+{
 _putchar(i);
+}
 _putchar('\n');
 }
 }
