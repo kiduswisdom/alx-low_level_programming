@@ -1,20 +1,21 @@
-#include "main.h"
+nclude "main.h"
 
 /**
-* print_alphabet_x10 -> prints the lowercase alphabets
-*/
-
+ * print_alphabet_x10 - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 void print_alphabet_x10(void)
 {
-int j;
-int x;
+	int i;
+	char j;
 
-for (x = 0; x < 10; x++)
-{
-	for (j = 'a'; j <= 'z'; j++)
+	for (i = 0; i < 10; i++)
 	{
-		_putchar(i);
-	}
-	_putchar('\n');
+		for (j = 'a'; j <= 'z'; j++)
+		{
+			_putchar(j);
+		}
+		_putchar('\n');
 	}
 }
