@@ -5,6 +5,7 @@
  * less than 4000000.
  *
  * Return: Nothing!
+ *
  */
 int main(void)
 {
