@@ -5,8 +5,6 @@
  * puts2 -> puts2 function
  *
  * @str: str parameter
- *
- * Return: nothing
  */
 void puts2(char *str)
 {
