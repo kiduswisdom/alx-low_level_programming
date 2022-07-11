@@ -1,26 +1,24 @@
 #include "main.h"
 
 /**
- * print_line - Draws a straight line according to parameter
- * @n: The number of lines to draw
+ * puts2 -> puts2 function
  *
- * Return: empty
+ * @str: str parameter
+ *
+ * Return: nothing
  */
-void print_line(int n)
+void puts2(char *str)
 {
+	int cycle;
 
-	int x;
-
-	if (n <= 0)
+	while (*str != 0)
 	{
-		_putchar('\n');
-		}
-		else
+		if (cycle % 2 == 0)
 		{
-		for (x = 0; x < n; x++)
-		{
-		_putchar(95);
+			_putchar(*str);
 		}
-		_putchar('\n');
+		cycle++;
+		str++;
 	}
+	_putchar(10);
 }
