@@ -2,9 +2,7 @@
 
 /**
  * puts2 - prints every other character in a string beginning with the 1st
- *
  * @str: pointer that will store the string's location
- *
  * Return: nothing
  */
 void puts2(char *str)
