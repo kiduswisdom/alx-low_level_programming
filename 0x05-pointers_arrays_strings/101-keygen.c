@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * main - entry point
+ * main - entry point for sum
  * Description: creates a random key for program 101_crackme
  * Return: always 0
  */
