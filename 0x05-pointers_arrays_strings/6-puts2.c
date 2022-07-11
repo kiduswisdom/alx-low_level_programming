@@ -2,16 +2,24 @@
 #include <string.h>
 
 /**
- * puts2 -> puts function
+ * puts2 -> puts2 function
+ *
  * @str: str parameter
+ *
  * Return: nothing
  */
 void puts2(char *str)
 {
-	int len, i;
+	int cycle;
 
-	len strlen(str);
-	for (i = 0; i < len; i += 2)
-		_putchar(str[i]);
-	_putchar('\n');
+	while (*str != 0)
+	{
+		if (cycle % 2 == 0)
+		{
+			_putchar(*str);
+		}
+		cycle++;
+		str++;
+	}
+	_putchar(10);
 }
