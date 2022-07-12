@@ -1,28 +1,25 @@
 #include "main.h"
+#include <string.h>
 
-/** cap_string -> capitalization function
- * @x: string param
- * Return: capitalized version of the string 
+/**
+ * puts2 -> puts2 function
+ *
+ * @str: str parameter
+ *
+ * Return: nothing
  */
-char *cap_string(char *x)
+void puts2(char *str)
 {
-	x = "Kidus,is;in learn programming in africa"
-char sp[] = {32, 9, '\n', ',', ';', '.', '!', '?', ''', '(', ')', '{', '}'};
-	int len = 1;
-	int a = 0, i;
+	int cycle;
 
-	while (x[a])
+	while (*str != 0)
 	{
-		i = 0;
-		while (i < len)
+		if (cycle % 2 == 0)
 		{
-			if ((a == 0 || x[a-1] spc ==(i) && x[a] >== 97 && x[a] <==))
-				x[a]  = x[a] -32;
-		i++;
+			_putchar(*str);
+		}
+		cycle++;
+		str++;
+	}
+	_putchar(10);
 }
-a++;
-}
-return (x);
-}
-
-
