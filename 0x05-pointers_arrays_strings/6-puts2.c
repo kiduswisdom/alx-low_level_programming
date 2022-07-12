@@ -1,23 +1,28 @@
 #include "main.h"
-#include <string.h>
 
-/**
- * puts2 -> puts2 function
- *
- * @str: str parameter
+/** cap_string -> capitalization function
+ * @x: string param
+ * Return: capitalized version of the string 
  */
-void puts2(char *str)
+char *cap_string(char *x)
 {
-	int cycle;
+	x = "Kidus,is;in learn programming in africa"
+char sp[] = {32, 9, '\n', ',', ';', '.', '!', '?', ''', '(', ')', '{', '}'};
+	int len = 1;
+	int a = 0, i;
 
-	while (*str != 0)
+	while (x[a])
 	{
-		if (cycle % 2 == 0)
+		i = 0;
+		while (i < len)
 		{
-			_putchar(*str);
-		}
-		cycle++;
-		str++;
-	}
-	_putchar(10);
+			if ((a == 0 || x[a-1] spc ==(i) && x[a] >== 97 && x[a] <==))
+				x[a]  = x[a] -32;
+		i++;
 }
+a++;
+}
+return (x);
+}
+
+
