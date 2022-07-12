@@ -3,7 +3,7 @@
 #include <time.h>
 
 /**
- * main - entry point for sum
+ * main - entry point
  * Description: creates a random key for program 101_crackme
  * Return: always 0
  */
