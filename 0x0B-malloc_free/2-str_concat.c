@@ -1,31 +1,55 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * _calloc - function to allocates memory
- * @nmemb: unsigned int type
- * @size: unsigned int type
- * Return: return pointer to array
+ * _strlen - length of a string
+ * @s: input char
+ * Return: length of a string
  */
 
-void *_calloc(unsigned int nmemb, unsigned int size)
+int _strlen(char *s)
 {
-	char *ptr;
-	unsigned int count;
+	int l = 0;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
+	while (*s != '\0')
 	{
-		return (NULL);
+		s++;
+		l++;
 	}
-	count = 0;
-	while (count < nmemb * size)
-	{
-		ptr[count] = 0;
-		count++;
-	}
-	return (ptr);
+	return (l);
+}
+
+/**
+ * str_concat - Concat 2 strings.
+ * @s1: string
+ * @s2: string
+ * Return: char
+ */
+
+char *str_concat(char *s1, char *s2)
+{
+	unsigned int l1, l2;
+	char *conc, *tmp;
+
+	if (!s1)
+		s1 = "";
+	else
+		l1 = _strlen(s1);
+
+	if (!s2)
+		s2 = "";
+	else
+		l2 = _strlen(s2);
+
+	conc = malloc(l1 + l2 + 1);
+	if (!conc)
+		return (0);
+
+	tmp = conc;
+	while (*s1)
+		*tmp++ = *s1++;
+
+	while ((*tmp++ = *s2++))
+		;
+
+	return (conc);
 }

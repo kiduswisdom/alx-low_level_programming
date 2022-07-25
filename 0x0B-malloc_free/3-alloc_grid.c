@@ -1,36 +1,46 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
- * array_range - make  memory for an array
- * @min: int type
- * @max: int type
- * Return:  return pointer to array
+ * alloc_grid - prints a grid of integer
+ * @width: width of the grid
+ * @height: height of the grid
+ * Return: pointer..
  */
 
-int *array_range(int min, int max)
+int **alloc_grid(int width, int height)
 {
-	int *ptr;
-	int arr;
+	int **s, r, c;
 
-	if (min > max)
+	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
 
-	ptr = malloc(sizeof(int) * (max - min + 1));
-	if (ptr == NULL)
+	s = malloc(sizeof(int *) * height);
+	if (s == NULL)
 	{
 		return (NULL);
 	}
-	arr = 0;
-	while (min <= max)
+
+	for (r = 0; r < height; r++)
 	{
-		ptr[arr] = min;
-		min++;
-		arr++;
+		s[r] = malloc(sizeof(int) * width);
+
+		if (s[r] == NULL)
+		{
+			for (; r >= 0; r--)
+			{
+				free(s[r]);
+			}
+			free(s);
+			return (NULL);
+		}
+
+		for (c = 0; c <= width; c++)
+		{
+			s[r][c] = 0;
+		}
 	}
-	return (ptr);
+	return (s);
 }

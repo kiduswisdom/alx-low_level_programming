@@ -1,40 +1,65 @@
-#include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "main.h"
 
 /**
- * _realloc - reallocate memory size function
- * @ptr: pointer to address of old memory location
- * @old_size: unsigned int type of old memory size
- * @new_size: unsigned int type for new memory size
- * Return:  return pointer to array
+ * _strlen - length of a string
+ * @s: input char
+ * Return: length of a string
  */
 
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+int _strlen(char *s)
 {
-	char *s;
+	int l = 0;
 
-	if (new_size > old_size)
+	while (*s != '\0')
 	{
-		s = malloc(new_size);
-		free(ptr);
-		return (s);
+		s++;
+		l++;
 	}
-	if (new_size == old_size)
+	return (l);
+}
+
+/**
+ * argstostr - concat
+ * @ac: coun
+ * @av: vector
+ * Return: string
+ */
+
+char *argstostr(int ac, char **av)
+{
+	int i, j, k;
+	int len, R = 0;
+	char *p;
+
+	if (!ac || !av)
 	{
-		return (ptr);
-	}
-	if (ptr == NULL)
-	{
-		s = malloc(new_size);
-		free(ptr);
-		return (s);
-	}
-	if (new_size == 0 && ptr != NULL)
-	{
-		free(ptr);
 		return (NULL);
 	}
-	return (ptr);
+	R = 0;
+
+	for (i = 0; i < ac; i++)
+	{
+		len = _strlen(av[i]) + 1;
+		R += len;
+	}
+	p = malloc(sizeof(char) * R + 1);
+
+	if (!p)
+	{
+		return (NULL);
+	}
+
+	for (i = 0; i < ac; i++)
+	{
+		len = _strlen(av[i]);
+
+		for (j = 0; j < len; j++, k++)
+		{
+			p[k] = av[i][j];
+		}
+		p[k++] = '\n';
+	}
+	p[k] = '\0';
+	return (p);
 }
