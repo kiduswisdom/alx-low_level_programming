@@ -1,24 +1,35 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
+
 /**
- * create_array - create array
- * @size: size
- * @c: constant
- * Return: char pointer
+ * create_array - writes the character c to stdout
+ * @size: The character to print
+ * @c: The character to print
+ * Return: pointer to array or null
  */
+
 char *create_array(unsigned int size, char c)
 {
-	char *p;
+	char *q;
 	unsigned int i;
 
 	if (size == 0)
-		return (0);
-	p = malloc((size) * sizeof(char));
-	if (p == '\0')
-		return (0);
-	for (i = 0; i < size; i++)
 	{
-		p[i] = c;
+		return (NULL);
 	}
-	return (p);
+
+	q = malloc(sizeof(char) * size);
+
+	if (q == NULL)
+	{
+		return (NULL);
+	}
+	else
+	{
+		for (i = 0; i < size; i++)
+		{
+			q[i] = c;
+		}
+	}
+	return (q);
 }
