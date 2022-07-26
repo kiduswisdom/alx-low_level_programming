@@ -22,8 +22,11 @@ char *argstostr(int ac, char **av)
 		for (j = 0; av[i][j] != '\0'; j++)
 			size++;
 		size++;
-	size++;
 	}
+	size++;
+
+	/* new line for each word
+	*/
 	strDup = malloc(sizeof(char) * size);
 
 	if (strDup == NULL)
