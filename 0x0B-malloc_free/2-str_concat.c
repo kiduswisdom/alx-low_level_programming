@@ -1,50 +1,50 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _strlen - length of a string
- * @s: input char
- * Return: length of a string
- */
-
-int _strlen(char *s)
-{
-	int l = 0;
-
-	while (*s != '\0')
-	{
-		s++;
-		l++;
-	}
-	return (l);
-}
-
-/**
- * str_concat - Concat 2 strings.
- * @s1: string
- * @s2: string
- * Return: char
+ * str_concat - concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ * Return: pointer to new space in memory or null
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int l1, l2;
-	char *conc, *tmp;
+	int i, j, k, e, coun;
+	int coun1 = 0;
+	int coun2 = 0;
+	char *q;
 
-	if (!s1)
+	if (s1 == NULL)
+	{
 		s1 = "";
-	else
-		l1 = _strlen(s1);
-	if (!s2)
+	}
+	if (s2 == NULL)
+	{
 		s2 = "";
-	else
-		l2 = _strlen(s2);
-	conc = malloc(l1 + l2 + 1);
-	if (!conc)
-		return (0);
-	tmp = conc;
-	while (*s1)
-		*tmp++ = *s1++;
-	while ((*tmp++ = *s2++))
-		;
-	return (conc);
+	}
+	for (i = 0; s1[i] != '\0'; i++)
+	{
+		coun1 = coun1 + 1;
+	}
+	for (j = 0; s2[j] != '\0'; j++)
+	{
+		coun2 = coun2 + 1;
+	}
+	coun = coun1 + coun2;
+	q = malloc(sizeof(char) * coun + 1);
+	if (q == NULL)
+	{
+		return (NULL);
+	}
+	for (k = 0; s1[k] != '\0'; k++)
+	{
+		q[k] = s1[k];
+	}
+	for (k = k, e = 0; s2[e] != '\0'; e++, k++)
+	{
+		q[k] = s2[e];
+	}
+	q[k] = '\0';
+	return (q);
 }
