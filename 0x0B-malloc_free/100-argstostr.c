@@ -1,65 +1,22 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * _strlen - length of a string
- * @s: input char
- * Return: length of a strin
+ * main - check the code for ALX School students.
+ *
+ * Return: Always 0.
  */
-
-int _strlen(char *s)
+int main(int ac, char *av[])
 {
-	int l = 0;
+	char *s;
 
-	while (*s != '\0')
+	s = argstostr(ac, av);
+	if (s == NULL)
 	{
-		s++;
-		l++;
+		return (1);
 	}
-	return (l);
-}
-
-/**
- * argstostr - concat
- * @ac: count
- * @av: vector
- * Return: string
- */
-
-char *argstostr(int ac, char **av)
-{
-	int i, j, k;
-	int len, R = 0;
-	char *p;
-
-	if (!ac || !av)
-	{
-		return (NULL);
-	}
-	R = 0;
-
-	for (i = 0; i < ac; i++)
-	{
-		len = _strlen(av[i]) + 1;
-		R += len;
-	}
-	p = malloc(sizeof(char) * R + 1);
-
-	if (!p)
-	{
-		return (NULL);
-	}
-
-	for (i = 0; i < ac; i++)
-	{
-		len = _strlen(av[i]);
-
-		for (j = 0; j < len; j++, k++)
-		{
-			p[k] = av[i][j];
-		}
-		p[k++] = '\n';
-	}
-	p[k] = '\0';
-	return (p);
+	printf("%s", s);
+	free(s);
+	return (0);
 }
