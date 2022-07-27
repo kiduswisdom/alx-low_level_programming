@@ -1,34 +1,58 @@
 #include "main.h"
+#include <stdlib.h>
 
-/**
- * _realloc - reallocates a memory block using malloc and fre
- * @ptr: pointer to reallocate memor
- * @old_size: size in bytes of allocated memor
- * @new_size: newsize of memory block in byte
- * Return: void pointer to new allocation of memory
+/** *
+* argstostr - concatenates all the arguments of a program.
+ 
+ * @ac: argument count. *
+* @av: argument vector.
+ 
+ * *
+* Return: pointer of an array of char
+ 
  */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+char *argstostr(int ac, char **av)
 {
-	char *p;
-	unsigned int i;
+	char *aout;
+	int c, i, j, ia;
 
-	if (ptr == NULL)
+	if (ac == 0)
 	{
-		p = malloc(new_size);
-		return (p);
-	}
-	if (new_size == 0)
-	{
-		free(ptr);
 		return (NULL);
 	}
-	if (old_size == new_size)
-		return (ptr);
-	p = malloc(new_size);
-	if (p == NULL)
-		return (NULL);
-	for (i = 0; i < old_size && i < new_size; i++)
-		p[i] = ((char *)ptr)[i];
-	free(ptr);
-	return (p);
+	for (c = i = 0; i < ac; i++)
+	{
+		if (av[i] == NULL)
+			return (NULL);
+
+		for (j = 0; av[i][j] != '\0'; j++)
+			c++;
+		c++;
+	}
+
+	aout = malloc((c + 1) * sizeof(char));
+
+	f (aout == NULL)
+
+	{
+		free(aout);
+		return (NULL)
+	}
+
+	or (i = j = ia = 0; ia < c; j++, ia++)
+
+	{
+		if (av[i][j] == '\0')
+		{
+			aout[ia] = '\n';
+			i++;
+			ia++;
+			j = 0;
+		}
+		if (ia < c - 1)
+			aout[ia] = av[i][j];
+	}
+	aout[ia] = '\0';
+
+	return (aout);
 }
