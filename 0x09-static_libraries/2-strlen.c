@@ -1,19 +1,21 @@
 #include "main.h"
 
 /**
- * _strlen - length of a string
- * @s: input char
- * Return: length of a string
+ * _strlen - prints the size of a string in bytes
+ *
+ * @s: pointer that will store the string's location
+ *
+ * Return: size of the string without the null \0 placed at the end of it
  */
-
 int _strlen(char *s)
 {
-	int l = 0;
+	int num;
 
-	while (*s != '\0')
+	num = 0;
+	while (*s != 0)
 	{
+		num++;
 		s++;
-		l++;
 	}
-	return (l);
+return (num);
 }

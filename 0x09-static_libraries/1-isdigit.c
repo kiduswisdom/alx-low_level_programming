@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * _isdigit - check the code for Holberton School students.
- * @c: is an integer param
- * Return: Always 0.
- */
-
+* _isdigit - function to check for a digit
+* @c: an integer argument
+* Return: success
+*/
 int _isdigit(int c)
 {
-	return (c >= 48 && c <= 57);
+return (c >= '0' && c <= '9');
 }
