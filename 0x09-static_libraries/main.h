@@ -1,6 +1,5 @@
-#ifndef FILE_MAIN
-#define FILE_MAIN
-
+#ifndef FILE_HOLBERTON
+#define FILE_HOLBERTON
 
 /*copy list from task*/
 

@@ -1,1 +1,1 @@
-This is the 0x09 static libraries programme in c language of my project. 
+This is Kidush  Project on 0x09 static labraries of c language 
