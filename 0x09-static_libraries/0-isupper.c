@@ -1,15 +1,12 @@
 #include "main.h"
 
 /**
- * _isupper - Check if a letter is upper
- * @c: The number to be checked
- *
- * Return: 1 for upper letter or 0 for any else
+ * _isupper - check the code for Holberton School students.
+ * @c: is an integer param
+ * Return: Always 0.
  */
+
 int _isupper(int c)
 {
-if (c >= 65 && c <= 90)
-return (1);
-return (0);
-return (c >= 'A' && c <= 'Z');
+	return (c >= 65 && c <= 90);
 }
