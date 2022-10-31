@@ -1,19 +1,17 @@
 #include "main.h"
-
 /**
- * _isalpha - determine when a is in alphabet.
- *
- * @c: A character..
- *
- * Return: 1 when is in the alphabet and 0 when it doesn't..
- */
+* _isalpha - returns 1 or 0
+* depending on if the character is capitalized or not.
+* @c: the character that is looked at.
+* Return: Returns 1 if capital, 0 if not.
+*/
 int _isalpha(int c)
 {
-	if (c >= 97 && c <= 122)
+	if ('A' <= c && c <= 'Z')
 	{
 		return (1);
 	}
-	else if (c >= 65 && c <= 90)
+	if ('a' <= c && c <= 'z')
 	{
 		return (1);
 	}
