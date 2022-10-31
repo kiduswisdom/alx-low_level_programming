@@ -73,7 +73,7 @@ int _atoi(char *s)
 		res = res * 10 + s[i] - '0';
 	return (res);
 }
-#include "holberton.h"
+#include "main.h"
 
 /**
  * _isdigit - checks for a digit character
