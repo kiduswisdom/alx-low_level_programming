@@ -1,22 +1,44 @@
 #!/usr/bin/python3
-"""5-island_perimeter module"""
+"""module to find island perimeter"""
 
 
 def island_perimeter(grid):
-    """Returns the perimeter of the island described in grid"""
-    c = 0
-    length = len(grid) - 1
-    width = len(grid[0]) - 1
-
-    for i, r in enumerate(grid):
-        for j, n in enumerate(r):
-            if n == 1:
-                if i == 0 or grid[i - 1][j] != 1:
-                    c += 1
-                if j == 0 or grid[i][j - 1] != 1:
-                    c += 1
-                if j == width or grid[i][j + 1] != 1:
-                    c += 1
-                if i == length or grid[i + 1][j] != 1:
-                    c += 1
-    return c
+    """that returns the perimeter of the island described in grid"""
+    count = 0
+    for column in range(len(grid)):
+        for row in range(len(grid[column])):
+            if grid[column][row] == 1:
+                # verify up
+                if column - 1 < 0:
+                    count += 1
+                else:
+                    try:
+                        if grid[column - 1][row] == 0 or column - 1 < 0:
+                            count += 1
+                    except:
+                        pass
+                # verify down
+                if column + 1 > len(grid) - 1:
+                    count += 1
+                else:
+                    try:
+                        if grid[column + 1][row] == 0:
+                            count += 1
+                    except:
+                        pass
+                # verify right
+                if row + 1 > len(grid[column]) - 1:
+                    count += 1
+                else:
+                    try:
+                        if grid[column][row + 1] == 0:
+                            count += 1
+                    except:
+                        pass
+                # verify left
+                try:
+                    if grid[column][row - 1] == 0 or row - 1 < 0:
+                        count += 1
+                except:
+                    pass
+    return count
